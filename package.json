@@ -1,0 +1,13 @@
+{
+  "name": "test_web_app",
+  "version": "1.0.0",
+  "description": "My first node server",
+  "author": "your name",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
