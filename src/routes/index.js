@@ -13,10 +13,15 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/order', function (req, res) {
-    console.log(req.query.test);
+  app.post('/order', function (req, res) {
+    console.log(req.body);
 
-    var data = req.query.test + ',' + '\n';
+    var data = req.body.firstname + ',' + 
+    req.body.email + ',' + 
+    req.body.size + ',' + 
+    req.body.style + ',' +
+    req.body.type + ',' +
+    req.body.toppings + '\n'; 
 
     fs.appendFile(filename, data, function (err) {
       if (err) {
@@ -24,6 +29,7 @@ module.exports = function(app) {
       }
     });
 
+    res.status(204);
     res.send('written');
   });
 }
